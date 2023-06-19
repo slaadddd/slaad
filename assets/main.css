@@ -64,12 +64,7 @@ body {
   z-index: -1;
 
 }
-.doordie {
-  z-index: -1;
-  bottom: 5px;
-  right: 5px;
 
-}
 body {
   font-family:monospace!important;
   background-color:#45adb4!important;
