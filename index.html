@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slaad</title>
-    <link rel="icon" type="image/png" href="5a521fa72f93c7a8d5137fcf.png" /> <!-- Replace with your favicon URL -->
+    <title>Your Website</title>
+    <link rel="icon" type="image/png" href="favicon.png"> <!-- Replace with your favicon URL -->
     <style>
         body {
             margin: 0;
@@ -40,60 +40,39 @@
             padding: 10px;
         }
 
-        .icon-button {
+        .button {
             margin: 10px 0;
-            padding: 10px;
+            padding: 10px 20px;
             background-color: red;
             color: white;
             border: none;
-            border-radius: 50%; /* Make it a circle */
+            border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
             text-align: center;
             transition: background-color 0.2s;
         }
 
-        .icon-button:hover {
+        .button:hover {
             background-color: darkred;
         }
     </style>
 </head>
 <body>
     <div id="video-container">
-        <video id="bg-video" autoplay loop>
-            <source src="https://cdn.discordapp.com/attachments/1110986814803693609/1148920122753429504/y2mate.is_-_DVRST_-_Close_Eyes_Mountain_JDM_Drift_Edit_4K--621SEHkfIM-720p-16939942561.mp4" type="video/mp4"> <!-- Replace with your video URL -->
+        <video autoplay loop muted>
+            <source src="https://your-video-url.com/video.mp4" type="video/mp4"> <!-- Replace with your video URL -->
             Your browser does not support the video tag.
         </video>
     </div>
 
     <div class="button-container">
-        <a href="https://t.me/slaada" class="icon-button"><img src="telegram-logo.png" alt="Telegram Logo"></a>
-        <a href="https://discord.com/users/1108730532763815976" class="icon-button"><img src="discord-logo.png" alt="Discord Logo"></a>
-        <a href="https://www.youtube.com/@DupingmoNkey" class="icon-button"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+        <a href="https://example.com/page1" class="button">Button 1</a>
+        <a href="https://example.com/page2" class="button">Button 2</a>
+        <a href="https://example.com/page3" class="button">Button 3</a>
     </div>
 
-    <script>
-        // JavaScript to control video and open links on icon button click
-        const bgVideo = document.getElementById("bg-video");
-        const telegramButton = document.querySelector(".icon-button:nth-child(1)");
-        const discordButton = document.querySelector(".icon-button:nth-child(2)");
-        const youtubeButton = document.querySelector(".icon-button:nth-child(3)");
-
-        telegramButton.addEventListener("click", function () {
-            window.location.href = "https://t.me/slaada";
-        });
-
-        discordButton.addEventListener("click", function () {
-            window.location.href = "https://discord.com/users/1108730532763815976";
-        });
-
-        youtubeButton.addEventListener("click", function () {
-            window.location.href = "https://www.youtube.com/@DupingmoNkey";
-        });
-
-        // Play the video when the page is loaded
-        bgVideo.play();
-    </script>
+    <!-- Your website content goes here -->
 
 </body>
 </html>
