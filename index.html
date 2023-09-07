@@ -1,238 +1,105 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <title>$laad</title>
-    <link rel="icon" type="image/png" href="5a521fa72f93c7a8d5137fcf.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Slaad">
-    <meta property="og:url" content="https://http://slaad.v0id.nl/">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:image" content="https://imgur.com/a/X8IBpTZ">
-    <meta name="theme-color" content="#2f3136">
-    <link rel="stylesheet" href="assets/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link rel="icon" type="image/png" href="favicon.png" /> <!-- Replace with your favicon URL -->
 
     <style>
-        ::selection {
-            color: rgba(0, 0, 0, 0.233);
-            background: transparent;
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
         }
 
-        #overlay {
-            position: absolute;
-            width: 100%;
-            height: 100%;
+        #video-container {
+            position: fixed;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 2;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
 
-        .text {
+        video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .button-container {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 20px;
-        }
-
-        .box2 {
-            top: 50%;
-            left: 50%;
-            background: rgba(0, 0, 0, 0.233);
-            transform: translate(0%, 0%);
-            border: 3px solid #ff0000;
-            border-radius: 2px;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px solid red;
+            border-radius: 5px;
             padding: 10px;
-            width: 400px;
-            height: 500px;
-            z-index: 1;
-            display: block;
-            -webkit-filter: blur(1px);
-            -moz-filter: blur(1px);
-            -o-filter: blur(1px);
-            -ms-filter: blur(1px);
-            filter: blur(1px);
         }
 
-        .coon1 {
-            position: absolute;
-            white-space: nowrap;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -650%);
-            font-size: 32px;
+        .icon-button {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 50%; /* Make it a circle */
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.2s;
         }
 
-        .coon2 {
-            position: absolute;
-            white-space: nowrap;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -1050%);
-            font-size: 16px;
+        .icon-button:hover {
+            background-color: darkred;
         }
-
-        .coon3 {
-            position: absolute;
-            white-space: nowrap;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -400%);
-            font-size: 32px;
-        }
-
-        .ifuckinghateniggers p {
-            color: lightblue;
-            position: absolute;
-            white-space: nowrap;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, 380%);
-            font-size: 32px;
-        }
-
-        .killalljews p {
-            color: lightblue;
-            position: absolute;
-            white-space: nowrap;
-            top: 50%;
-            left: 50%;
-            transform: translate(-42%, -250%);
-            font-size: 26px;
-        }
-
-        .gayfaggots120 p {
-            color: lightblue;
-            position: absolute;
-            white-space: nowrap;
-            top: 50%;
-            left: 50%;
-            transform: translate(-34%, -320%);
-            font-size: 26px;
-        }
-
-        .youtube img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-300%, -150%);
-        }
-
-        .youtube p {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-350%, -140%);
-            font-size: 64px;
-        }
-
-        .telegram img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-300%, 200%);
-        }
-
-        .telegram p {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-350%, 160%);
-            font-size: 64px
-        }
-        .discord img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-250%, -120%);
-        }
-        .discord p {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-300%, -110%);
-            font-size: 64px;
-        }
-
-        .email p {
-            color: lime;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-100%, 1125%);
-            font-size: 20px;
-        } 
     </style>
-<script nonce="0a1cfc4e-cf31-468b-830e-9158586690c3">(function(w,d){!function(dK,dL,dM,dN){dK[dM]=dK[dM]||{};dK[dM].executed=[];dK.zaraz={deferred:[],listeners:[]};dK.zaraz.q=[];dK.zaraz._f=function(dO){return function(){var dP=Array.prototype.slice.call(arguments);dK.zaraz.q.push({m:dO,a:dP})}};for(const dQ of["track","set","debug"])dK.zaraz[dQ]=dK.zaraz._f(dQ);dK.zaraz.init=()=>{var dR=dL.getElementsByTagName(dN)[0],dS=dL.createElement(dN),dT=dL.getElementsByTagName("title")[0];dT&&(dK[dM].t=dL.getElementsByTagName("title")[0].text);dK[dM].x=Math.random();dK[dM].w=dK.screen.width;dK[dM].h=dK.screen.height;dK[dM].j=dK.innerHeight;dK[dM].e=dK.innerWidth;dK[dM].l=dK.location.href;dK[dM].r=dL.referrer;dK[dM].k=dK.screen.colorDepth;dK[dM].n=dL.characterSet;dK[dM].o=(new Date).getTimezoneOffset();if(dK.dataLayer)for(const dX of Object.entries(Object.entries(dataLayer).reduce(((dY,dZ)=>({...dY[1],...dZ[1]})),{})))zaraz.set(dX[0],dX[1],{scope:"page"});dK[dM].q=[];for(;dK.zaraz.q.length;){const d_=dK.zaraz.q.shift();dK[dM].q.push(d_)}dS.defer=!0;for(const ea of[localStorage,sessionStorage])Object.keys(ea||{}).filter((ec=>ec.startsWith("_zaraz_"))).forEach((eb=>{try{dK[dM]["z_"+eb.slice(7)]=JSON.parse(ea.getItem(eb))}catch{dK[dM]["z_"+eb.slice(7)]=ea.getItem(eb)}}));dS.referrerPolicy="origin";dS.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(dK[dM])));dR.parentNode.insertBefore(dS,dR)};["complete","interactive"].includes(dL.readyState)?zaraz.init():dK.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script></head>
-
+</head>
 <body>
-    <main>
-        <script>
-            function videoPlay() {
-                var video = document.getElementById("video");
-                video.play()
-            }
-            function off() {
-                document.getElementById("overlay").style.display = "none";
-            }
-        </script>
-        <div id="overlay" onclick="videoPlay();off()">
-            <div class="text">Click to enter</div>
-        </div>
-        <video loop="" playsinline="" preload="auto" class="fullscreen bg-video" id="video">
+    <div id="video-container">
+        <video id="bg-video" autoplay loop muted>
             <source src="https://cdn.discordapp.com/attachments/1110986814803693609/1148920122753429504/y2mate.is_-_DVRST_-_Close_Eyes_Mountain_JDM_Drift_Edit_4K--621SEHkfIM-720p-16939942561.mp4" type="video/mp4">
+            Your browser does not support the video tag.
         </video>
-        <section class="fullscreen text-content">
-            </div>
-            <div id="center">
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <div class="box1"></div>
-                <div class="box2"></div>
-                <div class="coon1">
-                    <p>$laad</p>
-                </div>
-                <div class="coon2">
-                    <p>kys.</p>
-                </div>
-                <div class="coon3">
-                    <p>Socials:</p>
-                </div>        
-                <div class="ifuckinghateniggers">
-                    <a href="https://t.me/slaada">
-                        <p>@slaada</p>
-                </div>
-            </a>
-            
-                <div class="killalljews">
-                    <a href="https://discord.com/users/1108730532763815976">
-                        <p>slaadisbetterfr</p>
-                    </a>
-                </div>
-
-               <div class="gayfaggots120">
-                    <a href="https://www.youtube.com/@DupingmoNkey">
-                        <p>Duping MOnkey</p>
-                    </a>
-                </div>
-
-<!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7bef7182626d4277b7dc18fc0caed609"}'></script><!-- Cloudflare Pages Analytics --></body>
-<center>
-    <div class="discord">
-        <img src="assets/disc.png" width="64" height="64">
-        <p>:</p>
     </div>
-    <div class="telegram">
-        <img src="assets/tele.png" width="64" height="64">
-        <p>:</p>
+
+    <div class="button-container">
+        <a href="https://www.youtube.com/@DupingmoNkey" class="icon-button">
+            <img src="youtube-logo.png" alt="YouTube Logo">
+        </a>
+        <a href="https://t.me/slaada" class="icon-button">
+            <img src="telegram-logo.png" alt="Telegram Logo">
+        </a>
+        <a href="https://discord.com/users/1108730532763815976" class="icon-button">
+            <img src="discord-logo.png" alt="Discord Logo">
+        </a>
     </div>
-<div class="youtube">
-        <img src="assets/youtube.png" width="64" height="64">
-        <p>:</p>
-</center>
+
+    <script>
+        // JavaScript to control video and open links on icon button click
+        const bgVideo = document.getElementById("bg-video");
+        const telegramButton = document.querySelector(".icon-button:nth-child(2)");
+        const discordButton = document.querySelector(".icon-button:nth-child(3)");
+        const youtubeButton = document.querySelector(".icon-button:nth-child(1)");
+
+        telegramButton.addEventListener("click", function () {
+            window.location.href = "https://t.me/slaada";
+        });
+
+        discordButton.addEventListener("click", function () {
+            window.location.href = "https://discord.com/users/1108730532763815976";
+        });
+
+        youtubeButton.addEventListener("click", function () {
+            window.location.href = "https://www.youtube.com/@DupingmoNkey";
+        });
+
+        // Play the video when the page is loaded
+        bgVideo.play();
+    </script>
+</body>
+</html>
