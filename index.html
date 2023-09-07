@@ -3,84 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website Title</title>
+    <title>Your Website</title>
     <link rel="icon" type="image/png" href="favicon.png"> <!-- Replace with your favicon URL -->
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #2f3136;
-            color: white;
             margin: 0;
             padding: 0;
+            overflow: hidden;
         }
 
-        header {
-            background-color: #1e1e1e;
-            padding: 20px;
-            text-align: center;
+        #video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
 
-        h1 {
-            font-size: 36px;
-            margin: 0;
-        }
-
-        nav {
-            margin-top: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: white;
-            margin: 0 15px;
-            font-size: 20px;
+        video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
         }
 
         .logo-container {
-            text-align: center;
-            margin-top: 50px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
         }
 
         .logo-container a {
+            margin-bottom: 10px;
             text-decoration: none;
-            margin: 0 15px;
         }
 
         .logo {
-            width: 100px;
-            height: 100px;
-            display: inline-block;
+            width: 50px;
+            height: 50px;
+            display: block;
             transition: transform 0.2s;
         }
 
         .logo:hover {
             transform: scale(1.2);
         }
-
-        .footer {
-            background-color: #1e1e1e;
-            text-align: center;
-            padding: 10px;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-
-        .footer p {
-            margin: 0;
-        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Your Website</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+    <div id="video-container">
+        <video autoplay loop muted>
+            <source src="https://cdn.discordapp.com/attachments/1110986814803693609/1148920122753429504/y2mate.is_-_DVRST_-_Close_Eyes_Mountain_JDM_Drift_Edit_4K--621SEHkfIM-720p-16939942561.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 
     <div class="logo-container">
         <a href="https://www.youtube.com/@DupingmoNkey" target="_blank">
@@ -94,13 +73,7 @@
         </a>
     </div>
 
-    <div class="content">
-        <!-- Your website content goes here -->
-        <p>add me already Kid</p>
-    </div>
+    <!-- Your website content goes here -->
 
-    <div class="footer">
-        <p>&copy; L</p>
-    </div>
 </body>
 </html>
