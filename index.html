@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website</title>
+    <title>Slaad</title>
     <link rel="icon" type="image/png" href="favicon.png"> <!-- Replace with your favicon URL -->
     <style>
         body {
@@ -27,50 +27,49 @@
             height: 100%;
         }
 
-        .logo-container {
+        .button-container {
             position: absolute;
             top: 20px;
             right: 20px;
             display: flex;
             flex-direction: column;
             align-items: flex-end;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px solid red;
+            border-radius: 5px;
+            padding: 10px;
         }
 
-        .logo-container a {
-            margin-bottom: 10px;
+        .button {
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
             text-decoration: none;
+            text-align: center;
+            transition: background-color 0.2s;
         }
 
-        .logo {
-            width: 50px;
-            height: 50px;
-            display: block;
-            transition: transform 0.2s;
-        }
-
-        .logo:hover {
-            transform: scale(1.2);
+        .button:hover {
+            background-color: darkred;
         }
     </style>
 </head>
 <body>
     <div id="video-container">
         <video autoplay loop muted>
-            <source src="https://cdn.discordapp.com/attachments/1110986814803693609/1148920122753429504/y2mate.is_-_DVRST_-_Close_Eyes_Mountain_JDM_Drift_Edit_4K--621SEHkfIM-720p-16939942561.mp4" type="video/mp4">
+            <source src="https://cdn.discordapp.com/attachments/1110986814803693609/1148920122753429504/y2mate.is_-_DVRST_-_Close_Eyes_Mountain_JDM_Drift_Edit_4K--621SEHkfIM-720p-16939942561.mp4" type="video/mp4"> <!-- Replace with your video URL -->
             Your browser does not support the video tag.
         </video>
     </div>
 
-    <div class="logo-container">
-        <a href="https://www.youtube.com/@DupingmoNkey" target="_blank">
-            <img src="youtube_logo.png" alt="YouTube" class="logo">
-        </a>
-        <a href="https://t.me/slaada" target="_blank">
-            <img src="telegram_logo.png" alt="Telegram" class="logo">
-        </a>
-        <a href="https://discord.com/users/1108730532763815976" target="_blank">
-            <img src="discord_logo.png" alt="Discord" class="logo">
-        </a>
+    <div class="button-container">
+        <a href="https://www.youtube.com/@DupingmoNkey" class="button">Youtube</a>
+        <a href="https://t.me/slaada" class="button">Telegram</a>
+        <a href="https://discord.com/users/1108730532763815976" class="button">Discord</a>
     </div>
 
     <!-- Your website content goes here -->
