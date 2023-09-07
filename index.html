@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>...</title>
+    <title>Clickable Logos with Video Background</title>
     <style>
         body {
             margin: 0;
@@ -33,16 +33,27 @@
     </style>
 </head>
 <body>
-<!-- video -->  
-    <video id="video-background" autoplay loop>
+    <video id="video-background" autoplay loop muted>
         <source src="https://cdn.discordapp.com/attachments/1111041970987610203/1149186741174018068/y2mate.is_-_Wilee_Night_Drive-B9VH-JZ1744-1080pp-1694057833.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <!-- Clickable logos -->    
-    <div class="button-container">
-        <a class="logo-button" href="anything" target="_blank">
-            <img src="picturehere" alt="Discord">
+    <!-- Clickable logos -->
+    <div class="logo" id="logo1">
+        <a href="https://example.com">
+            <img src="https://example.com/logo1.png" alt="Logo 1">
+        </a>
+    </div>
+
+    <div class="logo" id="logo2">
+        <a href="https://example.com">
+            <img src="https://example.com/logo2.png" alt="Logo 2">
+        </a>
+    </div>
+
+    <div class="logo" id="logo3">
+        <a href="https://example.com">
+            <img src="https://example.com/logo3.png" alt="Logo 3">
         </a>
     </div>
 </body>
