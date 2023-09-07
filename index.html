@@ -60,19 +60,40 @@
 </head>
 <body>
     <div id="video-container">
-        <video autoplay loop muted="false"> <!-- Set muted to false to unmute the video -->
+        <video id="bg-video" autoplay loop>
             <source src="https://cdn.discordapp.com/attachments/1110986814803693609/1148920122753429504/y2mate.is_-_DVRST_-_Close_Eyes_Mountain_JDM_Drift_Edit_4K--621SEHkfIM-720p-16939942561.mp4" type="video/mp4"> <!-- Replace with your video URL -->
             Your browser does not support the video tag.
         </video>
     </div>
 
     <div class="button-container">
-        <a href="https://t.me/slaada" class="icon-button"><img src="assets/tele.png" alt="Telegram Logo"></a>
-        <a href="https://discord.com/users/1108730532763815976" class="icon-button"><img src="assets/disc.png" alt="Discord Logo"></a>
-        <a href="https://www.youtube.com/@DupingmoNkey" class="icon-button"><img src="assets/youtube.png" alt="YouTube Logo"></a>
+        <a href="https://t.me/slaada" class="icon-button"><img src="telegram-logo.png" alt="Telegram Logo"></a>
+        <a href="https://discord.com/users/1108730532763815976" class="icon-button"><img src="discord-logo.png" alt="Discord Logo"></a>
+        <a href="https://www.youtube.com/@DupingmoNkey" class="icon-button"><img src="youtube-logo.png" alt="YouTube Logo"></a>
     </div>
 
-    <!-- Your website content goes here -->
+    <script>
+        // JavaScript to control video and open links on icon button click
+        const bgVideo = document.getElementById("bg-video");
+        const telegramButton = document.querySelector(".icon-button:nth-child(1)");
+        const discordButton = document.querySelector(".icon-button:nth-child(2)");
+        const youtubeButton = document.querySelector(".icon-button:nth-child(3)");
+
+        telegramButton.addEventListener("click", function () {
+            window.location.href = "https://t.me/slaada";
+        });
+
+        discordButton.addEventListener("click", function () {
+            window.location.href = "https://discord.com/users/1108730532763815976";
+        });
+
+        youtubeButton.addEventListener("click", function () {
+            window.location.href = "https://www.youtube.com/@DupingmoNkey";
+        });
+
+        // Play the video when the page is loaded
+        bgVideo.play();
+    </script>
 
 </body>
 </html>
